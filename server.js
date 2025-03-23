@@ -6,6 +6,7 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 app.use(cors());
+console.log("🔍 MONGO_URL:", process.env.MONGO_URL);
 
 // Подключение к MongoDB
 mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })

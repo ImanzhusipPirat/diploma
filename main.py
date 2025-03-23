@@ -8,9 +8,14 @@ import datetime
 import jwt
 from fastapi.encoders import jsonable_encoder
 from passlib.context import CryptContext
+from fastapi import FastAPI
+
 
 # --- Инициализация FastAPI ---
 app = FastAPI()
+@app.get("/")
+def read_root():
+    return {"message": "🚀 Сервер работает!"}
 
 # --- Разрешение CORS (для фронта) ---
 app.add_middleware(
